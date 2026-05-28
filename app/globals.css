@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #050607;
+  --foreground: #f6f1e8;
+  --muted: #8f918b;
+  --line: rgba(246, 241, 232, 0.12);
+  --cads-cyan: #66f4ff;
+  --cads-amber: #f8c572;
+  --cads-violet: #a38bff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(102, 244, 255, 0.12), transparent 32rem),
+    radial-gradient(circle at 90% 8%, rgba(163, 139, 255, 0.18), transparent 36rem),
+    radial-gradient(circle at 50% 100%, rgba(248, 197, 114, 0.1), transparent 34rem),
+    var(--background);
+  color: var(--foreground);
+  font-family: "Aptos", "Segoe UI Variable", "Helvetica Neue", sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: rgba(102, 244, 255, 0.28);
+  color: #ffffff;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.prose-cads pre {
+  overflow-x: auto;
+}
+
+.noise {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.035;
+  mix-blend-mode: screen;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(246, 241, 232, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(246, 241, 232, 0.055) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
