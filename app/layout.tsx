@@ -1,19 +1,19 @@
-import type { Metadata } from "next"
-import "./globals.css"
+import type { Metadata } from "next";
+import { Fraunces, Manrope } from "next/font/google";
+import "./globals.css";
+
+const display = Fraunces({ subsets: ["latin"], variable: "--font-display" });
+const body = Manrope({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "CadsUI — Premium Motion Components",
-  description:
-    "Copy-paste animated UI components for React, Tailwind, and shadcn/ui.",
-}
+  title: "cads-ui — premium motion components",
+  description: "Copy-paste premium motion components for React, Tailwind, and shadcn-style projects.",
+};
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <body>
-        {children}
-        <div className="noise" aria-hidden="true" />
-      </body>
+    <html lang="en" className={`${display.variable} ${body.variable} dark`}>
+      <body className="noise min-h-screen font-[var(--font-body)] antialiased">{children}</body>
     </html>
-  )
+  );
 }

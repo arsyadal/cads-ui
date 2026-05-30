@@ -1,935 +1,459 @@
-# PRD — CadsUI
+# PRD — cads-ui
 
-**CadsUI** adalah premium motion UI component kit untuk React, Tailwind, dan shadcn/ui.
+## 1. Ringkasan
 
-## 1. Ringkasan Produk
+cads-ui adalah produk komponen UI premium berbasis React + Tailwind + motion, dengan model **copy-paste first** ala shadcn.
 
-**CadsUI** adalah **copy-paste animated UI component kit** untuk developer yang ingin membuat landing page, portfolio, dan SaaS interface terlihat premium tanpa membangun micro-interaction dari nol.
+Tujuan utama:
+- Jual komponen spesifik, bukan UI library generik
+- Bantu developer bikin UI terasa premium lebih cepat
+- Fokus pada motion, micro-interaction, dan visual feel modern
 
-Model produk mengikuti pendekatan seperti shadcn/ui: user tidak hanya meng-install black-box package, tetapi bisa menyalin source code komponen ke project mereka sendiri, lalu mengubahnya sesuai kebutuhan.
-
-Positioning utama:
-
-> CadsUI: Premium motion components for React, Tailwind, and shadcn/ui. Copy, paste, customize, and ship beautiful interfaces faster.
-
-Produk ini bukan UI library umum. Fokus utamanya adalah **motion, micro-interaction, dan premium landing page feel**.
-
----
-
-## 2. Masalah yang Diselesaikan
-
-Banyak developer bisa membangun layout React, tetapi kesulitan membuat UI terasa mahal, smooth, dan polished. Motion UI sering membutuhkan waktu lama karena developer harus memikirkan:
-
-- Transisi antar-state
-- Hover interaction
-- Responsive behavior
-- Dark mode
-- Accessibility
-- Kompatibilitas Tailwind/shadcn
-- Struktur props yang mudah dikustomisasi
-- Performa animasi
-
-Akibatnya, banyak landing page terlihat generic walaupun secara fungsi sudah benar.
-
-Produk ini membantu developer mendapatkan komponen premium siap pakai dengan source code terbuka, sehingga mereka bisa langsung copy, paste, customize, dan ship.
+Contoh komponen awal:
+- Morph Modal
+- Floating Island Navbar
+- Magnifier Dock
+- Spotlight Card
+- Animated Pricing Card
 
 ---
 
-## 3. Target Pengguna
+## 2. Problem
 
-### 3.1 Primary User
+Banyak developer bisa bikin aplikasi jalan, tapi hasil UI sering:
+- terasa biasa
+- kurang polished
+- butuh waktu lama untuk bikin animasi halus
+- sulit membuat interaksi premium dari nol
 
-**Frontend developer / indie hacker** yang menggunakan:
+Pilihan saat ini juga punya gap:
+- UI library umum terlalu generic
+- package komponen sering sulit dikustom
+- animasi premium biasanya tersebar di berbagai repo, tweet, atau snippet
+- banyak solusi bagus, tapi tidak dikemas spesifik untuk landing page, portfolio, dan SaaS kecil
 
-- React
-- Next.js
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Motion / Framer Motion
+---
 
-Kebutuhan mereka:
+## 3. Opportunity
 
-- Membuat landing page cepat
-- Meningkatkan visual quality project
-- Tidak ingin install UI library besar
-- Ingin source code bisa dimodifikasi
-- Butuh komponen yang terlihat premium untuk portfolio, SaaS, atau agency client
+Sudah ada demand untuk:
+- animated components
+- shadcn-style open code components
+- Tailwind-friendly snippets
+- komponen visual premium untuk landing page dan marketing site
 
-### 3.2 Secondary User
+Kompetitor utama:
+- Magic UI
+- Aceternity UI
+- Animate UI
+- Smooth UI
 
-- Freelancer pembuat landing page
+Celah positioning:
+- fokus pada **premium motion components**
+- bukan kumpulan komponen random
+- bukan design system enterprise
+- dibuat untuk developer yang ingin UI cepat terlihat mahal
+
+---
+
+## 4. Product Vision
+
+**"Premium motion components for React developers who want beautiful UI fast."**
+
+cads-ui harus terasa:
+- modern
+- visual-first
+- mudah diambil per komponen
+- source code terbuka untuk buyer/user
+- mudah dimodifikasi sesuai project
+
+---
+
+## 5. Target User
+
+### Primary
+- Frontend developer
+- Indie hacker
+- Freelancer web developer
 - Agency kecil
-- Startup early-stage
-- Creator template
-- Developer yang menjual website ke client
+- Builder landing page / portfolio
+
+### Secondary
+- Startup kecil yang butuh marketing site cepat
+- Content creator/dev educator yang butuh demo visual menarik
+
+### Karakter user
+- Pakai React / Next.js
+- Nyaman dengan Tailwind
+- Tidak mau lock-in ke library besar
+- Lebih suka ambil source code daripada install package berat
+- Mau bayar kalau komponen menghemat waktu dan menaikkan kualitas visual
 
 ---
 
-## 4. Value Proposition
+## 6. Positioning
 
-Produk ini memberikan:
+### Bukan
+- UI framework enterprise
+- Komponen dashboard CRUD berat
+- Design system corporate yang kompleks
+- Clone shadcn tanpa diferensiasi
 
-1. **Komponen premium siap copy-paste**  
-   Tidak perlu memahami animasi kompleks dari nol.
-
-2. **Source code terbuka untuk user**  
-   User bisa edit, extend, dan sesuaikan dengan project sendiri.
-
-3. **Cocok dengan ekosistem modern**  
-   React, Next.js, TypeScript, Tailwind, shadcn/ui, dan Motion.
-
-4. **Fokus pada visual impact**  
-   Komponen dibuat untuk membuat halaman terlihat lebih mahal.
-
-5. **Dokumentasi praktis**  
-   Setiap komponen punya preview, props, installation note, dan contoh penggunaan.
+### Adalah
+- Shadcn-style component registry
+- Free basic UI components untuk adoption
+- Premium motion components untuk monetisasi
+- Copy-paste component kit untuk React + Tailwind
+- Premium UI blocks untuk landing page, portfolio, SaaS, agency site
 
 ---
 
-## 5. Positioning dan Branding
+## 7. Goals
 
-### 5.1 Positioning
+### Business Goals
+- Validasi bahwa komponen premium bisa dijual
+- Dapat user awal dari GitHub, X, dan komunitas frontend
+- Ubah trafik gratis jadi pembelian pack premium
 
-Jangan diposisikan sebagai:
+### Product Goals
+- Punya MVP 5–10 komponen berkualitas tinggi
+- Semua komponen mudah dipakai dan dimodifikasi
+- Dokumentasi dan preview jelas
 
-> Saya jual komponen React.
+### Success Metrics
+- 100+ GitHub stars awal
+- 20+ email waitlist / leads awal
+- 5+ buyer pertama
+- 3 komponen awal dipakai user di project nyata
+- Conversion free ke paid bisa diuji
 
-Positioning yang lebih kuat:
+---
 
-> Saya membuat premium motion components untuk developer yang ingin landing page, portfolio, dan SaaS mereka terlihat mahal tanpa desain dari nol.
+## 8. MVP Scope
 
-### 5.2 Naming Guideline
+### Komponen MVP
 
-Hindari penggunaan nama brand pihak ketiga seperti Apple, Dynamic Island Apple, Apple Dock, dan sejenisnya.
+#### Free Core
+1. Button
+2. Badge
+3. Card
+4. Input
+5. Textarea
+6. Basic Dialog
 
-Gunakan nama generik dan aman seperti:
+#### Pro Motion
+1. Morph Modal
+2. Floating Island Navbar
+3. Magnifier Dock
+4. Color Orbit Card
+5. Animated Pricing Card
+6. Spotlight Card
 
+### Deliverables MVP
+- Landing page
+- Halaman docs per komponen
+- Preview/live demo
+- Copy-paste code per komponen
+- Panduan install dependency
+- Props / customization examples
+- Dark mode support
+- Responsive behavior
+
+### Out of Scope for MVP
+- Figma kit
+- Vue/Svelte version
+- Dashboard admin components
+- Theme builder
+- Visual editor
+- Marketplace multi-vendor
+
+---
+
+## 9. Core Product Requirements
+
+### 9.1 Distribution Model
+Produk harus mendukung model ala shadcn:
+- user bisa copy-paste source code
+- idealnya ada command add per komponen di fase berikutnya
+- package install tidak jadi dependency utama untuk semua komponen
+
+Tahap awal cukup:
+- docs + source code
+- struktur folder jelas
+- dependency list per komponen
+
+Tahap berikutnya:
+- `npx cads-ui add morph-modal`
+- `npx cads-ui add floating-island-navbar`
+- `npx cads-ui add magnifier-dock`
+
+### 9.2 Developer Experience
+Setiap komponen harus:
+- pakai TypeScript
+- cocok untuk React / Next.js
+- pakai Tailwind CSS
+- gunakan motion library yang umum
+- mudah rename class, ubah colors, spacing, radius, timing
+- tidak over-abstracted
+
+### 9.3 Quality Bar
+Setiap komponen wajib:
+- visual polished
+- animasi smooth
+- keyboard/focus states masuk akal
+- mobile behavior jelas
+- dark mode aman
+- dokumentasi penggunaan singkat
+
+### 9.4 Docs
+Setiap halaman docs minimal punya:
+- nama komponen
+- preview
+- use case
+- install steps
+- dependencies
+- code snippet
+- props/customization
+- accessibility notes
+
+---
+
+## 10. Feature Requirements per Component
+
+### A. Morph Modal
+**Use case:** CTA, signup modal, feature preview, gallery modal
+
+**Requirements:**
+- open/close animation smooth
+- support trigger button
+- backdrop fade
+- content scale/morph feel
+- ESC to close
+- click outside to close
+- responsive width
+- dark mode
+
+### B. Floating Island Navbar
+**Use case:** landing page nav, portfolio nav, section switcher
+
+**Requirements:**
+- sticky/floating feel
+- active item highlight
+- compact premium rounded shell
+- smooth hover/active animation
+- mobile fallback
+- optional CTA button
+
+### C. Magnifier Dock
+**Use case:** social links, quick actions, portfolio launcher
+
+**Requirements:**
+- hover magnify effect
+- smooth scale interpolation
+- icon tooltip optional
+- keyboard accessible
+- mobile fallback without broken interaction
+- configurable icon size and spacing
+
+### D. Spotlight Card
+**Requirements:**
+- cursor-follow highlight
+- safe fallback on touch devices
+- no janky repaint
+
+### E. Animated Pricing Card
+**Requirements:**
+- hover emphasis
+- featured tier highlight
+- CTA motion subtle, not distracting
+
+---
+
+## 11. UX Principles
+
+- **Copy-paste first** — user owns source code
+- **Looks premium by default** — tidak perlu styling banyak agar bagus
+- **Simple integration** — tidak bikin setup ribet
+- **Specific > generic** — komponen punya tujuan visual jelas
+- **Motion with restraint** — animasi terasa mahal, bukan norak
+
+---
+
+## 12. Naming Principles
+
+Hindari nama yang terlalu dekat dengan brand pihak lain.
+
+### Hindari
+- Apple Dynamic Island Navbar
+- Apple Dock Icons
+
+### Gunakan
 - Floating Island Navbar
 - Magnifier Dock
 - Morph Modal
 - Elastic Social Dock
-- Liquid Command Menu
 - Expandable Pill Navigation
-- Spotlight Card
-- Notification Stack
-
-### 5.3 Tone Visual
-
-Arah visual:
-
-- Premium
-- Smooth
-- Modern
-- Minimal tetapi tidak kosong
-- High contrast
-- Dark mode friendly
-- Detail micro-interaction jelas
-
-Hindari:
-
-- Tampilan terlalu template generic
-- Gradient berlebihan tanpa tujuan
-- Animasi terlalu ramai
-- Meniru brand tertentu terlalu dekat
 
 ---
 
-## 6. Scope MVP
-
-MVP pertama tidak perlu langsung 50 komponen. Fokus awal adalah membuktikan bahwa developer tertarik, mau mencoba, dan mau membagikan.
-
-### 6.1 MVP Version 0.1
-
-Target: validasi market.
-
-Deliverable:
-
-1. Landing page sederhana
-2. 3 komponen utama
-3. Dokumentasi dasar
-4. GitHub repository public
-5. Demo online
-6. Post launch di beberapa channel
-
-Komponen MVP:
-
-1. Floating Island Navbar
-2. Morph Modal
-3. Magnifier Dock
-
-### 6.2 MVP Version 0.2
-
-Target: menambah trust dan memperluas use case.
-
-Tambahan komponen:
-
-4. Spotlight Card
-5. Liquid Button
-6. Expandable Search Bar
-7. Scroll Reveal Section
-8. Animated Pricing Card
-9. Notification Stack
-10. Command Menu with Motion
-
-### 6.3 Batasan MVP
-
-Tidak termasuk pada MVP awal:
-
-- NPM package kompleks
-- Marketplace penuh
-- User account
-- Dashboard admin
-- Payment integration sejak hari pertama
-- Registry CLI kompleks
-- Banyak framework selain React
-
----
-
-## 7. Format Distribusi Produk
-
-### 7.1 Tahap Awal
-
-Distribusi awal memakai metode manual:
-
-1. User buka halaman komponen
-2. User melihat preview
-3. User membaca dependency
-4. User copy kode komponen
-5. User paste ke project sendiri
-
-Contoh instruksi:
-
-```bash
-npm install motion clsx tailwind-merge lucide-react
-```
-
-Lalu:
-
-```txt
-Copy component into:
-components/ui/floating-island-navbar.tsx
-```
-
-### 7.2 Tahap Lanjutan
-
-Jika validasi bagus, buat registry/CLI ala shadcn:
-
-```bash
-npx cadsui add floating-island-navbar
-npx cadsui add morph-modal
-npx cadsui add magnifier-dock
-```
-
-Namun ini bukan prioritas MVP 0.1.
-
----
-
-## 8. Tech Stack
-
-### 8.1 Website Dokumentasi
-
-Rekomendasi:
-
-- Next.js App Router
-- React
-- TypeScript
-- Tailwind CSS
-- shadcn/ui
-- Motion / Framer Motion
-- MDX atau content file sederhana
-- Vercel untuk deployment
-
-### 8.2 Komponen
-
-Dependencies utama:
-
-- `react`
-- `typescript`
-- `tailwindcss`
-- `motion` atau `framer-motion`
-- `clsx`
-- `tailwind-merge`
-- `lucide-react` bila butuh icon
-
-Optional:
-
-- `@radix-ui/react-dialog` untuk modal accessibility
-- `@radix-ui/react-navigation-menu` jika dibutuhkan
-
-### 8.3 Prinsip Dependency
-
-- Jangan terlalu banyak dependency.
-- Komponen harus mudah dicopy.
-- Dependency harus umum di ekosistem React/Tailwind.
-- Hindari dependency visual yang sulit dikustomisasi.
-
----
-
-## 9. Struktur Project yang Disarankan
-
-```txt
-project-root/
-  app/
-    page.tsx
-    components/
-      page.tsx
-    components/[slug]/
-      page.tsx
-  components/
-    ui/
-      button.tsx
-      card.tsx
-    motion-ui/
-      floating-island-navbar.tsx
-      morph-modal.tsx
-      magnifier-dock.tsx
-  content/
-    components/
-      floating-island-navbar.mdx
-      morph-modal.mdx
-      magnifier-dock.mdx
-  lib/
-    utils.ts
-    components.ts
-  public/
-    preview/
-  prd.md
-  README.md
-```
-
-Alternatif sederhana untuk MVP:
-
-```txt
-components/
-  floating-island-navbar.tsx
-  morph-modal.tsx
-  magnifier-dock.tsx
-app/
-  page.tsx
-  docs/
-    page.tsx
-```
-
----
-
-## 10. Detail Komponen MVP
-
-## 10.1 Floating Island Navbar
-
-### Deskripsi
-
-Navbar berbentuk pill/floating island yang berada di bagian atas halaman. Saat user scroll atau hover, navbar dapat berubah ukuran, menampilkan item tambahan, atau memperjelas background blur.
-
-### Use Case
-
-- SaaS landing page
-- Portfolio
-- Agency website
-- Personal brand
-
-### Fitur
-
-- Floating pill layout
-- Glassmorphism optional
-- Active item indicator
-- Smooth hover animation
-- Responsive mobile menu
-- Dark mode support
-- CTA button optional
-- Logo/brand slot
-
-### Props Awal
-
-```ts
-type NavItem = {
-  label: string
-  href: string
-  icon?: React.ReactNode
-}
-
-type FloatingIslandNavbarProps = {
-  logo?: React.ReactNode
-  items: NavItem[]
-  cta?: {
-    label: string
-    href: string
-  }
-  activeHref?: string
-  className?: string
-}
-```
-
-### Behavior
-
-- Desktop:
-  - Navbar tampil sebagai pill di tengah atas.
-  - Item memiliki hover background/transisi.
-  - Active item memiliki indikator visual.
-- Mobile:
-  - Tampil sebagai compact pill.
-  - Menu bisa expand/collapse.
-- Scroll:
-  - Background navbar menjadi lebih solid ketika user scroll.
-
-### Acceptance Criteria
-
-- Bisa digunakan di Next.js client component.
-- Tidak error di TypeScript strict mode.
-- Responsive di mobile dan desktop.
-- Dark mode bekerja.
-- CTA optional.
-- Animasi smooth tanpa layout shift besar.
-- Link bisa diganti sesuai data user.
-
----
-
-## 10.2 Morph Modal
-
-### Deskripsi
-
-Modal dengan animasi morph dari trigger element ke dialog. Cocok untuk detail produk, preview portfolio, login prompt, atau showcase card.
-
-### Use Case
-
-- Product detail modal
-- Portfolio preview
-- Login/signup modal
-- Image/content preview
-
-### Fitur
-
-- Trigger button/card
-- Morph scale animation
-- Backdrop blur
-- Close button
-- Escape to close
-- Click outside to close
-- Optional title, description, content, footer
-- Accessibility melalui Radix Dialog atau implementasi setara
-
-### Props Awal
-
-```ts
-type MorphModalProps = {
-  trigger: React.ReactNode
-  title?: string
-  description?: string
-  children: React.ReactNode
-  footer?: React.ReactNode
-  className?: string
-}
-```
-
-### Behavior
-
-- Klik trigger membuka modal.
-- Modal muncul dengan scale/morph transition.
-- Background memiliki overlay blur.
-- Modal bisa ditutup dengan close button, ESC, atau klik backdrop.
-- Focus dikembalikan ke trigger setelah modal ditutup.
-
-### Acceptance Criteria
-
-- Accessible minimal: keyboard close, focus handling, aria label/title.
-- Tidak menyebabkan scroll body aneh.
-- Works in dark mode.
-- Bisa dipakai dengan konten bebas.
-- Animasi tidak patah ketika modal dibuka/ditutup cepat.
-
----
-
-## 10.3 Magnifier Dock
-
-### Deskripsi
-
-Dock ikon sosial/link dengan efek magnifier saat hover. Terinspirasi dari pola magnification dock, tapi nama dan implementasi dibuat generik.
-
-### Use Case
-
-- Social media links
-- Portfolio footer
-- App shortcut menu
-- Creator profile
-
-### Fitur
-
-- Icon list
-- Hover magnification
-- Smooth spring animation
-- Tooltip label
-- Custom icon support
-- Horizontal dan optional vertical layout
-- Mobile fallback tanpa hover dependency
-
-### Props Awal
-
-```ts
-type DockItem = {
-  label: string
-  href: string
-  icon: React.ReactNode
-  target?: string
-}
-
-type MagnifierDockProps = {
-  items: DockItem[]
-  size?: number
-  magnifiedSize?: number
-  className?: string
-}
-```
-
-### Behavior
-
-- Desktop:
-  - Icon di dekat cursor membesar.
-  - Icon sekitarnya ikut sedikit membesar.
-  - Tooltip muncul saat hover.
-- Mobile:
-  - Icon tampil normal tanpa efek hover kompleks.
-  - Tap membuka link.
-
-### Acceptance Criteria
-
-- Efek hover smooth.
-- Tidak membuat layout page bergeser.
-- Link accessible dengan label.
-- Bisa pakai icon apa pun.
-- Works in light/dark mode.
-
----
-
-## 11. Komponen Backlog
-
-### 11.1 Spotlight Card
-
-Card dengan efek spotlight mengikuti cursor.
-
-Acceptance:
-
-- Mouse spotlight smooth
-- Bisa dipakai untuk feature grid
-- Mobile fallback aman
-
-### 11.2 Animated Pricing Card
-
-Pricing card dengan hover elevation, badge, dan CTA interaction.
-
-Acceptance:
-
-- Support monthly/yearly state
-- Highlight popular plan
-- Responsive grid
-
-### 11.3 Liquid Button
-
-Button dengan animasi liquid/elastic pada hover atau click.
-
-Acceptance:
-
-- Support variants
-- Tidak mengganggu readability
-- Bisa disabled/loading
-
-### 11.4 Expandable Search Bar
-
-Search input yang expand dari icon/pill menjadi input penuh.
-
-Acceptance:
-
-- Keyboard accessible
-- ESC clear/close
-- Mobile friendly
-
-### 11.5 Scroll Reveal Section
-
-Wrapper untuk reveal animation saat section masuk viewport.
-
-Acceptance:
-
-- Support stagger children
-- Respect reduced motion
-- Tidak animasi berlebihan
-
-### 11.6 Notification Stack
-
-Stack notifikasi dengan enter/exit animation.
-
-Acceptance:
-
-- Auto-dismiss optional
-- Manual close
-- Multiple variants
-
-### 11.7 Command Menu with Motion
-
-Command palette dengan animasi masuk/keluar.
-
-Acceptance:
-
-- Keyboard shortcut
-- Search/filter item
-- Accessible dialog
-
----
-
-## 12. Dokumentasi Setiap Komponen
-
-Setiap halaman komponen harus memiliki:
-
-1. Live preview
-2. Copy code button
-3. Installation/dependency note
-4. Usage example
-5. Props table
-6. Customization guide
-7. Accessibility note
-8. Dark mode preview
-9. Responsive behavior note
-
-Template dokumentasi:
-
-```md
-# Component Name
-
-Short description.
-
-## Preview
-
-Live preview here.
-
-## Installation
-
-Dependencies and copy path.
-
-## Usage
-
-Code example.
-
-## Props
-
-Props table.
-
-## Customization
-
-How to customize colors, size, animation.
-
-## Accessibility
-
-Keyboard, aria, focus behavior.
-```
-
----
-
-## 13. Non-Functional Requirements
-
-### 13.1 Performance
-
-- Animasi harus terasa smooth di device modern.
-- Hindari animasi layout-heavy jika bisa memakai transform/opacity.
-- Gunakan `transform`, `scale`, `opacity`, dan `filter` dengan hati-hati.
-- Jangan membuat halaman demo berat.
-
-### 13.2 Accessibility
-
-- Modal harus keyboard accessible.
-- Link harus memiliki label.
-- Tooltip tidak boleh menjadi satu-satunya sumber informasi penting.
-- Respect `prefers-reduced-motion` jika memungkinkan.
-- Kontras warna harus cukup.
-
-### 13.3 Responsiveness
-
-- Semua komponen MVP harus punya behavior mobile.
-- Jika efek hover tidak relevan di mobile, berikan fallback sederhana.
-
-### 13.4 Developer Experience
-
-- TypeScript type jelas.
-- Props tidak terlalu kompleks.
-- ClassName bisa di-override.
-- Kode tidak terlalu abstrak.
-- Mudah dicopy ke project lain.
-
----
-
-## 14. Monetisasi
-
-### 14.1 Model Awal
-
-Gunakan model **Free + Pro**.
-
-Free:
-
-- 3–5 komponen basic
-- GitHub public
-- Dokumentasi terbuka
-- Untuk membangun trust dan traffic
-
-Pro:
-
-- Komponen premium
-- Blocks siap pakai
-- Template landing page
-- Lifetime source code access
-
-### 14.2 Harga Awal
-
-Global market:
-
+## 13. Monetization
+
+### Model
+**Free + Pro**
+
+### Free
+- Basic UI components gratis
+- 3–5 animated teaser components bisa dipertimbangkan
+- repo publik untuk traction dan trust
+- docs tetap tersedia
+- tujuan utama: adoption, GitHub stars, trust
+
+### Pro
+- premium animated components
+- advanced motion blocks
+- full component pack
+- source code access
+- lifetime updates untuk periode awal
+- tujuan utama: revenue dari komponen yang sulit dibuat cepat dan terlihat premium
+
+### Pricing Hypothesis
 - Early access: $9–$19
-- Full component pack: $29–$49
+- Pro pack: $29–$49
 - Lifetime bundle: $79–$149
 
-Market Indonesia:
-
-- Mini pack: Rp49.000
-- Pro pack: Rp149.000
-- Lifetime early access: Rp299.000
-
-### 14.3 Kapan Mulai Jualan
-
-Jangan tunggu 50 komponen. Mulai jual saat sudah ada:
-
-- 10 komponen bagus
-- Landing page rapi
-- Minimal 3 komponen free
-- Preview interaktif
-- Dokumentasi cukup jelas
-- Ada sinyal interest dari audience
+Harga lokal bisa diuji terpisah bila target Indonesia ingin dikejar.
 
 ---
 
-## 15. Go-To-Market Plan
+## 14. Go-to-Market
 
-### 15.1 Channel Launch
-
-Channel utama:
-
+Channel awal:
 - GitHub
-- X/Twitter
+- X / Twitter
 - LinkedIn
-- Reddit r/reactjs
-- Product Hunt
-- TikTok/Reels dev content
-- Indie Hackers
-- Dev.to
+- Reddit (`r/reactjs`, `r/nextjs`, `r/webdev`)
+- TikTok / Reels dev showcase
+- Product Hunt setelah lebih matang
 
-### 15.2 Konten yang Diposting
-
-Format konten:
-
-- Short demo video 10–20 detik
-- Before/after landing page
-- Thread: building premium motion components
-- Free component drop
-- Behind the scenes coding
-- Comparison: generic navbar vs floating island navbar
-
-### 15.3 Launch Copy Awal
-
-Contoh:
-
-> I’m building a copy-paste motion component kit for React, Tailwind, and shadcn/ui. First 3 free components: Floating Island Navbar, Morph Modal, and Magnifier Dock.
-
-### 15.4 Indikator Validasi
-
-Produk mulai tervalidasi jika ada:
-
-- GitHub stars bertambah
-- User bertanya cara install
-- User request komponen baru
-- Ada DM/komentar minta versi pro
-- Ada orang menggunakan komponen di project
-- Demo mendapat share/bookmark
-- Traffic organik mulai muncul
+Konten promosi terbaik:
+- short demo video
+- before/after UI comparison
+- code snippet preview
+- “build this premium navbar in minutes” angle
 
 ---
 
-## 16. Roadmap Eksekusi
+## 15. Validation Plan
 
-### Week 1 — Foundation
+Mulai dari 3 komponen paling kuat:
+- Floating Island Navbar
+- Morph Modal
+- Magnifier Dock
 
-Target:
-
-- Gunakan nama produk final: CadsUI
-- Setup Next.js + Tailwind + shadcn
-- Buat landing page sederhana
-- Buat struktur dokumentasi
-
-Deliverable:
-
-- Homepage online
-- Repo GitHub public/private siap
-- Design direction awal
-
-### Week 2 — MVP Components
-
-Target:
-
-- Build Floating Island Navbar
-- Build Morph Modal
-- Build Magnifier Dock
-
-Deliverable:
-
-- 3 komponen berjalan
-- Preview interaktif
-- Basic docs per komponen
-
-### Week 3 — Polish & Publish
-
-Target:
-
-- Rapikan TypeScript
-- Tambah dark mode
-- Tambah responsive behavior
-- Tambah copy code block
-- Tulis README
-
-Deliverable:
-
-- Repo public
-- Demo deploy
-- Dokumentasi dasar selesai
-
-### Week 4 — Launch & Validate
-
-Target:
-
-- Posting demo ke channel utama
-- Kumpulkan feedback
-- Catat request komponen
-- Perbaiki bug
-
-Deliverable:
-
-- Public launch
-- Feedback list
-- Roadmap v0.2
-
-### Month 2 — Monetization Prep
-
-Target:
-
-- Tambah sampai 10–15 komponen
-- Buat pro pack awal
-- Buat payment/waitlist sederhana
-- Buat template landing page pertama
-
-Deliverable:
-
-- Free + Pro split
-- Early access offer
+### Validasi awal dianggap positif jika:
+- ada stars dan forks dari GitHub
+- ada save/share dari video demo
+- ada user minta komponen tambahan
+- ada email/signup/waitlist
+- ada pembelian awal atau DM intent to buy
 
 ---
 
-## 17. Success Metrics
+## 16. Risks
 
-### 17.1 MVP 0.1 Metrics
-
-Target minimal dalam 30 hari:
-
-- 100+ GitHub stars atau equivalent interest
-- 500+ unique visitors ke demo site
-- 10+ user request/feedback
-- 3+ orang mencoba komponen
-- 1+ inbound message tentang versi premium
-
-### 17.2 MVP 0.2 Metrics
-
-Target dalam 60 hari:
-
-- 300+ GitHub stars
-- 2.000+ unique visitors
-- 50+ email/waitlist
-- 3–10 pembelian awal jika pro sudah dibuka
-
----
-
-## 18. Risiko dan Mitigasi
-
-### Risiko 1: Kompetitor Sudah Kuat
-
-Kompetitor seperti Magic UI, Aceternity UI, Animate UI, dan Smooth UI sudah punya banyak komponen.
-
+### Risk 1 — kompetitor sudah banyak
 Mitigasi:
+- fokus ke niche motion premium
+- prioritaskan kualitas visual dan docs
+- jual outcome, bukan cuma file komponen
 
-- Jangan bersaing sebagai UI library umum.
-- Fokus pada motion kit kecil tapi sangat polished.
-- Buat dokumentasi dan preview lebih praktis.
-- Cari style visual yang distinctive.
-
-### Risiko 2: Komponen Terlihat Seperti Clone
-
+### Risk 2 — dianggap mudah ditiru
 Mitigasi:
+- bangun brand, docs, preview, consistency
+- release rutin
+- punya bundle dan polish yang lebih tinggi
 
-- Hindari nama brand pihak ketiga.
-- Buat variasi visual sendiri.
-- Jangan menyalin pixel-perfect dari produk tertentu.
-
-### Risiko 3: Scope Terlalu Besar
-
+### Risk 3 — terlalu luas dari awal
 Mitigasi:
+- batasi MVP ke 5 komponen
+- hindari dashboard/UI umum
 
-- Mulai dari 3 komponen.
-- Jangan bangun CLI dulu.
-- Jangan bangun payment dulu.
-- Validasi dengan demo dan GitHub.
-
-### Risiko 4: Animasi Berat
-
+### Risk 4 — legal/branding confusion
 Mitigasi:
-
-- Pakai transform dan opacity.
-- Test di mobile.
-- Tambah reduced motion fallback.
+- jangan pakai nama brand pihak ketiga
+- cukup gunakan deskripsi “inspired by premium OS-like interactions” bila perlu
 
 ---
 
-## 19. Keputusan Produk
+## 17. Roadmap
 
-Keputusan untuk MVP:
+### Phase 0 — Foundation
+- landing page jelas
+- docs dengan sidebar
+- live preview per komponen
+- positioning Free Core + Pro Motion
 
-1. Pakai React + Next.js + TypeScript + Tailwind.
-2. Pakai copy-paste model dulu, bukan npm package.
-3. Mulai dari 3 komponen.
-4. Fokus ke landing page, SaaS, portfolio, agency.
-5. Jangan pakai branding terlalu mirip Apple.
-6. Dokumentasi harus dibuat sejak awal.
-7. Monetisasi baru setelah ada minimal 10 komponen bagus.
+### Phase 1 — Free Core MVP
+- Button
+- Badge
+- Card
+- Input
+- Textarea
+- Basic Dialog
+- semua gratis dan copy-paste friendly
+
+### Phase 2 — Pro Motion Pack
+- 5–10 animated components
+- polish motion dan visual quality
+- pricing / early access CTA
+- demo video/GIF per komponen utama
+
+### Phase 3 — Registry / CLI
+- metadata registry
+- add command per komponen
+- versioning
+- free components bisa di-add langsung
+- pro components diarahkan ke access/purchase flow
+
+### Phase 4 — Blocks
+- hero sections
+- pricing sections
+- testimonials
+- nav/footer bundles
+- premium landing page sections
 
 ---
 
-## 20. Next Action Paling Dekat
+## 18. Technical Stack
 
-Urutan eksekusi setelah PRD ini:
+Direkomendasikan:
+- React
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Motion / Framer Motion
+- shadcn-compatible structure
 
-1. Gunakan nama produk final: CadsUI.
-2. Setup project Next.js.
-3. Buat homepage dengan headline, preview area, dan CTA GitHub.
-4. Build `FloatingIslandNavbar`.
-5. Build `MorphModal`.
-6. Build `MagnifierDock`.
-7. Buat docs singkat untuk masing-masing.
-8. Deploy demo.
-9. Publish repo.
-10. Posting demo pertama.
+Prinsip teknis:
+- source code clear
+- dependency minimal
+- mudah diambil per komponen
+- no heavy runtime wrapper kalau tidak perlu
 
 ---
 
-## 21. Definition of Done MVP 0.1
+## 19. Launch Criteria
 
-MVP 0.1 dianggap selesai jika:
+MVP siap launch jika:
+- 3 komponen utama selesai
+- docs bisa dipahami user baru
+- preview live stabil
+- semua komponen responsive
+- dark mode aman
+- dependency/install steps tidak membingungkan
 
-- Landing page online.
-- 3 komponen MVP tersedia.
-- Setiap komponen punya preview dan usage example.
-- Komponen support TypeScript.
-- Komponen support Tailwind.
-- Komponen responsive minimal.
-- Dark mode bekerja.
-- README jelas.
-- Repo bisa diakses publik.
-- Demo sudah diposting minimal di 2 channel.
+---
+
+## 20. One-Line Product Thesis
+
+**cads-ui menyediakan basic components gratis ala shadcn dan menjual premium motion components yang bisa langsung diambil, dikustom, dan dipakai developer untuk membuat UI terasa mahal tanpa mulai dari nol.**

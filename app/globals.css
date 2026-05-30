@@ -1,76 +1,50 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #0B0B0A;
+  --color-bone: #F5F0E8;
+  --color-copper: #C86F37;
+  --color-acid: #D7FF5C;
+  --color-graphite: #171716;
+  --shadow-glow: 0 0 80px rgba(216, 255, 92, 0.18);
+  --shadow-copper: 0 22px 80px rgba(200, 111, 55, 0.22);
+}
+
 :root {
   color-scheme: dark;
-  --background: #050607;
-  --foreground: #f6f1e8;
-  --muted: #8f918b;
-  --line: rgba(246, 241, 232, 0.12);
-  --cads-cyan: #66f4ff;
-  --cads-amber: #f8c572;
-  --cads-violet: #a38bff;
+  --background: #0b0b0a;
+  --foreground: #f5f0e8;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-  min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(circle at 20% 0%, rgba(102, 244, 255, 0.12), transparent 32rem),
-    radial-gradient(circle at 90% 8%, rgba(163, 139, 255, 0.18), transparent 36rem),
-    radial-gradient(circle at 50% 100%, rgba(248, 197, 114, 0.1), transparent 34rem),
-    var(--background);
+    radial-gradient(circle at 10% 10%, rgba(200, 111, 55, 0.18), transparent 34rem),
+    radial-gradient(circle at 80% 0%, rgba(215, 255, 92, 0.11), transparent 28rem),
+    #0b0b0a;
   color: var(--foreground);
-  font-family: "Aptos", "Segoe UI Variable", "Helvetica Neue", sans-serif;
-  text-rendering: geometricPrecision;
 }
 
-::selection {
-  background: rgba(102, 244, 255, 0.28);
-  color: #ffffff;
-}
+::selection { background: #d7ff5c; color: #0b0b0a; }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.prose-cads pre {
-  overflow-x: auto;
-}
-
-.noise {
-  pointer-events: none;
+.noise:before {
+  content: "";
   position: fixed;
   inset: 0;
-  z-index: 60;
-  opacity: 0.035;
-  mix-blend-mode: screen;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  opacity: 0.09;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
 }
 
-.grid-fade {
+.cads-grid {
   background-image:
-    linear-gradient(rgba(246, 241, 232, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(246, 241, 232, 0.055) 1px, transparent 1px);
-  background-size: 72px 72px;
-  mask-image: radial-gradient(circle at center, black, transparent 72%);
+    linear-gradient(rgba(245, 240, 232, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 240, 232, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 72%);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+pre { overflow-x: auto; }
